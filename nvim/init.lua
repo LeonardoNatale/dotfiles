@@ -101,6 +101,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-w>N', '<cmd>tabnext<CR>', { desc = 'Move focus to the next tab' })
 vim.keymap.set('n', '<C-w>P', '<cmd>tabprevious<CR>', { desc = 'Move focus to the previous tab' })
 
+--
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -205,7 +209,7 @@ require('lazy').setup {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      -- Requires Nerd Font.
+      -- Requires Nerd ont.
       'nvim-telescope/telescope-ui-select.nvim',
       'nvim-tree/nvim-web-devicons',
       'nvim-telescope/telescope-project.nvim',
@@ -387,7 +391,7 @@ require('lazy').setup {
         end,
       })
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
+      -- LSP servers and clients are able to communic-macchiatoate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP Specification.
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
@@ -405,7 +409,6 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
-        gopls = {},
         -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
         tsserver = {},
         lua_ls = {
@@ -479,8 +482,8 @@ require('lazy').setup {
       -- See https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'goimports', 'gofmt' },
         -- A sub-list will run only the first available formatter.
+        --
         javascript = { { 'prettierd', 'prettier' } },
         typescript = { { 'prettierd', 'prettier' } },
       },
@@ -582,22 +585,16 @@ require('lazy').setup {
   },
 
   {
-    -- If you want to see what colorschemes are already installed, you can use
-    -- `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    -- Load the plugin during the start up.
+    'catppuccin/nvim',
     lazy = false,
-    -- Ensure to load the color scheme before any other start plugin.
-    priority = 1000,
+    name = 'catppuccin',
+    priority = 1001,
     config = function()
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false },
-          keywords = { italic = false },
-        },
+      require('catppuccin').setup {
+        flavour = 'macchiato',
       }
 
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'catppuccin'
       vim.cmd.hi 'Comment gui=none'
     end,
   },
@@ -614,7 +611,7 @@ require('lazy').setup {
       keywords = {
         FIX = { color = 'error', alt = { 'FIXME', 'BUG', 'FIXIT', 'ISSUE' } },
         NOTE = { color = 'hint', alt = { 'INFO' } },
-        TODO = { color = 'info' },
+        TODO = { color = 'info', alt = { 'TECHNICAL-DEBT' } },
         WARN = { color = 'warning', alt = { 'IMPORTANT' } },
       },
     },
@@ -666,12 +663,12 @@ require('lazy').setup {
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
           'bash',
-          'go',
           'html',
           'javascript',
           'json',
           'lua',
           'markdown',
+          'python',
           'typescript',
           'vim',
           'vimdoc',
