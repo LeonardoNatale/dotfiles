@@ -10,6 +10,9 @@ vim.g.maplocalleader = ' '
 -- Make line numbers default.
 vim.opt.number = true
 
+-- Set relative line numbers
+vim.wo.relativenumber = true
+
 -- Enable mouse mode, can be useful for resizing splits for example.
 vim.opt.mouse = 'a'
 
@@ -101,7 +104,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<C-w>N', '<cmd>tabnext<CR>', { desc = 'Move focus to the next tab' })
 vim.keymap.set('n', '<C-w>P', '<cmd>tabprevious<CR>', { desc = 'Move focus to the previous tab' })
 
---
+-- Center viewport when using <C-d> and <C-u>
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
