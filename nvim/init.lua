@@ -319,7 +319,21 @@ require('lazy').setup {
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
     },
+    -- Victor eslint
     config = function()
+      -- require('lspconfig')['eslint'].setup {
+      --   --- ...
+      --   on_attach = function(client, bufnr)
+      --     vim.api.nvim_create_autocmd('BufWritePre', {
+      --       buffer = bufnr,
+      --       command = 'TSToolsAddMissingImports',
+      --     })
+      --     vim.api.nvim_create_autocmd('BufWritePre', {
+      --       buffer = bufnr,
+      --       command = 'EslintFixAll',
+      --     })
+      --   end,
+      -- }
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -486,9 +500,9 @@ require('lazy').setup {
       formatters_by_ft = {
         lua = { 'stylua' },
         -- A sub-list will run only the first available formatter.
-        --
-        javascript = { { 'prettierd', 'prettier' } },
-        typescript = { { 'prettierd', 'prettier' } },
+        python = { 'ruff' },
+        javascript = { { 'eslintd', 'prettierd', 'prettier' } },
+        typescript = { { 'eslintd', 'prettierd', 'prettier' } },
       },
     },
   },
@@ -586,22 +600,6 @@ require('lazy').setup {
       }
     end,
   },
-
-  {
-    'catppuccin/nvim',
-    lazy = false,
-    name = 'catppuccin',
-    priority = 1001,
-    config = function()
-      require('catppuccin').setup {
-        flavour = 'macchiato',
-      }
-
-      vim.cmd.colorscheme 'catppuccin'
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-
   -- Highlight todo, notes, etc in comments.
   {
     'folke/todo-comments.nvim',
@@ -655,36 +653,6 @@ require('lazy').setup {
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-
-  -- Highlight, edit, and navigate code
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          'bash',
-          'html',
-          'javascript',
-          'json',
-          'lua',
-          'markdown',
-          'python',
-          'typescript',
-          'vim',
-          'vimdoc',
-          'yaml',
-        },
-        -- Autoinstall languages that are not installed
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-      }
-    end,
-  },
-
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for kickstart
   --
   --  Here are some example plugins that I've included in the kickstart repository.
@@ -699,6 +667,7 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
+  { import = 'core.plugins' },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
