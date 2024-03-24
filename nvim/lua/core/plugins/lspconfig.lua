@@ -9,21 +9,7 @@ return {
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
   },
-  -- Victor eslint
   config = function()
-    -- require('lspconfig')['eslint'].setup {
-    --   --- ...
-    --   on_attach = function(client, bufnr)
-    --     vim.api.nvim_create_autocmd('BufWritePre', {
-    --       buffer = bufnr,
-    --       command = 'TSToolsAddMissingImports',
-    --     })
-    --     vim.api.nvim_create_autocmd('BufWritePre', {
-    --       buffer = bufnr,
-    --       command = 'EslintFixAll',
-    --     })
-    --   end,
-    -- }
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -118,6 +104,18 @@ return {
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
       -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
       tsserver = {},
+      eslint = {
+        on_attach = function(client, bufnr)
+          -- vim.api.nvim_create_autocmd('BufWritePre', {
+          --   buffer = bufnr,
+          --   command = 'TSToolsAddMissingImports',
+          -- })
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            command = 'EslintFixAll',
+          })
+        end,
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
