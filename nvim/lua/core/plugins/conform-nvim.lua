@@ -12,8 +12,9 @@ return {
       lua = { 'stylua' },
       -- A sub-list will run only the first available formatter.
       python = { 'ruff' },
-      javascript = { { 'prettierd', 'prettier' } },
-      typescript = { { 'prettierd', 'prettier' } },
+      javascript = { { 'eslint_d' } },
+      typescript = { { 'eslint_d' } },
+      typescriptreact = { { 'eslint_d' } },
     },
   },
 }
