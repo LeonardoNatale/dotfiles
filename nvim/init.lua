@@ -84,10 +84,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!"<CR>')
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!"<CR>')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!"<CR>')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -107,6 +107,12 @@ vim.keymap.set('n', '<C-w>P', '<cmd>tabprevious<CR>', { desc = 'Move focus to th
 -- Center viewport when using <C-d> and <C-u>
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- Navigate windows
+vim.keymap.set('n', '<Up>', '<C-w>k')
+vim.keymap.set('n', '<Down>', '<C-w>j')
+vim.keymap.set('n', '<Left>', '<C-w>h')
+vim.keymap.set('n', '<Right>', '<C-w>l')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

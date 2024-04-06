@@ -7,10 +7,13 @@ return {
     vim.g.barbar_auto_setup = false
   end,
   opts = {
-    -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-    -- animation = true,
-    -- insert_at_start = true,
-    -- …etc.
+    disabled_keys = {
+      -- arrow keys used to move between windows
+      ['<Up>'] = {},
+      ['<Down>'] = {},
+      ['<Left>'] = {},
+      ['<Right>'] = {},
+    },
   },
   version = '^1.0.0', -- optional: only update when a new 1.x version is released
 }
