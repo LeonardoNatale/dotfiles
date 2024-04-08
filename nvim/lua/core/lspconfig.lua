@@ -116,6 +116,9 @@ return {
           })
         end,
       },
+      tailwindcss = {},
+      cssls = {},
+      yamlls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
