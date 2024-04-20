@@ -7,6 +7,7 @@ return {
     vim.g.barbar_auto_setup = false
   end,
   opts = {
+    semantic_letters = true,
     disabled_keys = {
       -- arrow keys used to move between windows
       ['<Up>'] = {},
