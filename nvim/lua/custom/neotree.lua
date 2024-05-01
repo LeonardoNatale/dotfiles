@@ -10,6 +10,11 @@ return {
     window = {
       position = 'left',
     },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+      },
+    },
   },
   vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>'),
 }
