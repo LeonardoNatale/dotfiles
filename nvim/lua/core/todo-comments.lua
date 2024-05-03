@@ -10,8 +10,9 @@ return {
     keywords = {
       FIX = { color = 'error', alt = { 'FIXME', 'BUG', 'FIXIT', 'ISSUE' } },
       NOTE = { color = 'hint', alt = { 'INFO' } },
-      TODO = { color = 'info', alt = { 'TECHNICAL-DEBT' } },
+      TODO = { color = 'info', alt = { '' } },
       WARN = { color = 'warning', alt = { 'IMPORTANT' } },
+      TECHNICAL_DEBT = { color = 'warning', alt = { 'TECHINCAL-DEBT' } },
     },
   },
 }
