@@ -46,7 +46,8 @@ return {
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        -- INFO: using inc-rename plugin instead
+        -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
         -- Execute a code action, usually your cursor needs to be on top of
         -- an error or a suggestion from your LSP for this to activate.
@@ -103,8 +104,12 @@ return {
     local servers = {
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
       -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
-      tsserver = {},
+      tsserver = {
+        autostart = true,
+        format = false,
+      },
       eslint = {
+        autostart = true,
         on_attach = function(client, bufnr)
           -- vim.api.nvim_create_autocmd('BufWritePre', {
           --   buffer = bufnr,
