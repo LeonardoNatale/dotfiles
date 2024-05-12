@@ -123,6 +123,7 @@ return {
       },
       tailwindcss = {},
       cssls = {},
+      ruff_lsp = {},
       yamlls = {},
       lua_ls = {
         -- cmd = {...},
