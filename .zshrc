@@ -60,11 +60,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git poetry poetry-env zsh-autosuggestions zsh-nvm)
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/Users/leonardonatale/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -110,3 +109,4 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias monorepo="cd ~/carbonfact/carbonfact"
 alias janco="cd ~/carbonfact/janco"
+alias dotfiles="cd ~/dev/dotfiles"
