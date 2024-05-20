@@ -109,3 +109,4 @@ fi
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias monorepo="cd ~/carbonfact/carbonfact"
+alias janco="cd ~/carbonfact/janco"
