@@ -110,16 +110,7 @@ return {
       },
       eslint = {
         autostart = true,
-        on_attach = function(client, bufnr)
-          -- vim.api.nvim_create_autocmd('BufWritePre', {
-          --   buffer = bufnr,
-          --   command = 'TSToolsAddMissingImports',
-          -- })
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            buffer = bufnr,
-            command = 'EslintFixAll',
-          })
-        end,
+        format = true,
       },
       tailwindcss = {},
       cssls = {},

@@ -48,3 +48,6 @@ vim.keymap.set('n', '<Right>', '<C-w>l')
 -- Buffers
 vim.keymap.set('n', '<leader>q', ':BufferClose<CR>', { desc = '[C]lose [B]uffer' })
 vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' })
+
+-- Neotree
+vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
