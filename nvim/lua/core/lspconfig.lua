@@ -106,12 +106,11 @@ return {
       -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
       tsserver = {
         autostart = true,
-        format = false,
       },
       eslint = {
         autostart = true,
-        format = true,
       },
+      prismals = {},
       tailwindcss = {},
       cssls = {},
       ruff_lsp = {},

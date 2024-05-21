@@ -10,6 +10,7 @@ return {
       'json',
       'lua',
       'markdown',
+      'prisma',
       'python',
       'typescript',
       'vim',
