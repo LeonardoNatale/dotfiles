@@ -51,3 +51,6 @@ vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' }
 
 -- Neotree
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
+
+-- Eslint formatting
+vim.keymap.set('n', '<leader>f', ':EslintFixAll<CR>', { desc = '[F]ormat Eslint' })

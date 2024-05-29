@@ -12,7 +12,7 @@ return {
       NOTE = { color = 'hint', alt = { 'INFO' } },
       TODO = { color = 'info', alt = { '' } },
       WARN = { color = 'warning', alt = { 'IMPORTANT' } },
-      TECHNICAL_DEBT = { color = 'warning', alt = { 'TECHINCAL-DEBT' } },
+      TECHNICAL_DEBT = { color = 'warning', alt = { 'TECHNICAL-DEBT' } },
     },
   },
 }
