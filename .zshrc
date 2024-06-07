@@ -79,8 +79,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Google Cloud SDK
-if [ -f '/Users/leonardonatale/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leonardonatale/Documents/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/leonardonatale/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leonardonatale/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/leonardonatale/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leonardonatale/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc'; fi
 
 # User configuration
 
@@ -110,3 +112,4 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias monorepo="cd ~/carbonfact/carbonfact"
 alias janco="cd ~/carbonfact/janco"
 alias dotfiles="cd ~/dev/dotfiles"
+
