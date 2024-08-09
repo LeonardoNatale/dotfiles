@@ -12,7 +12,8 @@ return {
       NOTE = { color = 'hint', alt = { 'INFO' } },
       TODO = { color = 'info', alt = { '' } },
       WARN = { color = 'warning', alt = { 'IMPORTANT' } },
-      TECHNICAL_DEBT = { color = 'warning', alt = { 'TECHNICAL-DEBT' } },
+      TECH_DEBT = { color = 'warning', alt = { 'TECHNICAL-DEBT', 'TECHNICAL_DEBT' } },
+      LCA = { color = 'warning', alt = { 'LCA-PITFALL', 'LCA_PITFALL' } },
     },
   },
 }

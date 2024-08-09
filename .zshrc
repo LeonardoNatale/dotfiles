@@ -109,7 +109,12 @@ fi
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias monorepo="cd ~/carbonfact/carbonfact"
-alias janco="cd ~/carbonfact/janco"
+
+# Quick navigation
 alias dotfiles="cd ~/dev/dotfiles"
+alias couture="cd ~/carbonfact/couture"
+alias kaya="cd ~/carbonfact/kaya"
+alias monorepo="cd ~/carbonfact/carbonfact"
+alias vera="cd ~/carbonfact/vera"
+alias janco="cd ~/carbonfact/janco"
 

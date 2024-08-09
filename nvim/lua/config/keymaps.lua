@@ -52,5 +52,8 @@ vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' }
 -- Neotree
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
 
--- Eslint formatting
-vim.keymap.set('n', '<leader>f', ':EslintFixAll<CR>', { desc = '[F]ormat Eslint' })
+--Formatting
+vim.keymap.set('n', '<leader>f', ':lua vim.lsp.buf.format() <CR>', { desc = '[F]ormat LSP' })
+
+-- Git
+vim.keymap.set('n', '<leader>gb<CR>', ':Telescope git_bcommits', { desc = '[G]it [B]lame' })
