@@ -106,6 +106,10 @@ return {
       -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
       tsserver = {
         autostart = true,
+        on_attach = function(client)
+          -- Don't use tsserver for formatting, use eslint or biome instead
+          client.server_capabilities.documentFormattingProvider = false
+        end,
       },
       biome = {
         autostart = true,
