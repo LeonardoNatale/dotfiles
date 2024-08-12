@@ -59,4 +59,4 @@ vim.keymap.set('n', '<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]
 vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { desc = '[C]ode [A]ction' })
 
 -- Git
-vim.keymap.set('n', '<leader>gb<CR>', ':Telescope git_bcommits', { desc = '[G]it [B]lame' })
+vim.keymap.set('n', '<leader>gb', ':Telescope git_bcommits<CR>', { desc = '[G]it [B]lame' })
