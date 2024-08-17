@@ -1,6 +1,6 @@
 [user]
 	email = replace_with_your_email
-	name = LeonardoNatale
+	name = your_git_username
 	signingkey = /Users/your_username/.ssh/id_ed25519.pub
 [commit]
 	gpgsign = true
@@ -8,3 +8,13 @@
 	hooksPath = /Users/your_username/.git/hooks
 [gpg]
 	format = ssh
+[alias]
+	staash = stash -all
+	super-blame = git blame -w -C -C -C
+	word-diff = git diff --word-diff
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
