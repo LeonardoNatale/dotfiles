@@ -1,0 +1,10 @@
+[user]
+	email = replace_with_your_email
+	name = LeonardoNatale
+	signingkey = /Users/your_username/.ssh/id_ed25519.pub
+[commit]
+	gpgsign = true
+[core]
+	hooksPath = /Users/your_username/.git/hooks
+[gpg]
+	format = ssh
