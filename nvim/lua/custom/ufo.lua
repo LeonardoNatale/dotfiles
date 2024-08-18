@@ -18,6 +18,7 @@ return {
       end
     end, { desc = 'Peek fold' })
 
+    -- To get the fold text to display the number of lines in the fold
     local handler = function(virtText, lnum, endLnum, width, truncate)
       local newVirtText = {}
       local suffix = (' 󰁂 %d '):format(endLnum - lnum)
@@ -47,9 +48,6 @@ return {
     end
 
     require('ufo').setup {
-      provider_selector = function()
-        return { 'treesitter', 'indent' }
-      end,
       fold_virt_text_handler = handler
     }
   end,
