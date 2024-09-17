@@ -109,7 +109,7 @@ return {
     local servers = {
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
       -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
-      tsserver = {
+      ts_ls = {
         autostart = true,
         on_attach = function(client)
           -- Don't use tsserver for formatting, use eslint or biome instead
