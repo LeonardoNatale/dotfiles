@@ -60,3 +60,6 @@ vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { desc =
 
 -- Git
 vim.keymap.set('n', '<leader>gb', ':Telescope git_bcommits<CR>', { desc = '[G]it [B]lame' })
+
+-- Json
+vim.keymap.set('n', '<leader>jq', ':%!jq -S .<CR>', { desc = '[J]son [S]ort' })
