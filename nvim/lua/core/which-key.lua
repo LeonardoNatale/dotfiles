@@ -29,7 +29,9 @@ return {
       { "<leader>w",  group = "[W]orkspace" },
       { "<leader>w_", hidden = true },
       { "<leader>g",  group = "[G]it" },
-      { "<leader>g_", hidden = true }
+      { "<leader>g_", hidden = true },
+      { "<leader>j", group = "[J]ason"},
+      { "<leader>j_", hidden = true }
     }
   end,
 }
