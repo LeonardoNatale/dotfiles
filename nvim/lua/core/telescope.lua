@@ -43,18 +43,33 @@ return {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        --   mappings = {
+        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        --   },
+      },
       file_ignore_patterns = {
-        ".git/"
+        "*.git*"
       },
       pickers = {
         find_files = {
-          hidden = true,
-        }
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = {
+            'rg',
+            '--files',
+            '--ignore',
+            '--hidden',
+            '-u',
+            '--glob',
+            '!**/.git/*',
+            '--glob',
+            '!**/node_modules/*',
+            '--glob',
+            '!**/.next/*',
+            '--glob',
+            '!**/dist/*',
+          },
+        },
       },
       extensions = {
         ['ui-select'] = {
