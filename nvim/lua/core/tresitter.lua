@@ -13,9 +13,15 @@ return {
       'prisma',
       'python',
       'typescript',
+      'tsx',
+      'dockerfile',
+      'css',
+      'toml',
       'vim',
       'vimdoc',
       'yaml',
+      'sql',
+      'regex'
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
