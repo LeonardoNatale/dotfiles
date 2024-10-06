@@ -59,7 +59,8 @@ vim.keymap.set('n', '<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]
 vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { desc = '[C]ode [A]ction' })
 
 -- Git
-vim.keymap.set('n', '<leader>gb', ':Telescope git_bcommits<CR>', { desc = '[G]it [B]lame' })
+vim.keymap.set('n', '<leader>gbc', ':Telescope git_bcommits<CR>', { desc = '[G]it [B]lame [C]ommit' })
+vim.keymap.set('n', '<leader>gbl', ':Gitsigns blame_line<CR>', { desc = '[G]it [B]lame [L]ine' })
 
 -- Json
 vim.keymap.set('n', '<leader>jq', ':%!jq -S .<CR>', { desc = '[J]son [S]ort' })
