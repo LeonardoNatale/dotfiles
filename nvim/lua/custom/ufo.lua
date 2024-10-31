@@ -6,6 +6,7 @@ return {
     vim.opt.fillchars = { fold = ' ' }
     vim.opt.foldmethod = 'indent'
     vim.opt.foldlevel = 99
+    -- vim.opt.foldlevelstart = 0
     vim.opt.foldcolumn = '0'
 
     vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'Open all folds' })
