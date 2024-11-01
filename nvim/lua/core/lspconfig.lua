@@ -117,12 +117,6 @@ return {
         end,
       },
       biome = {
-        autostart = true,
-        on_attach = function()
-          -- biome is fast enough to use as autoformatter.
-          -- set an autocmd to call vim.lsp.buf.format() on writing current buffer
-          vim.api.nvim_command("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-        end
       },
       eslint = {
         autostart = true,
@@ -179,6 +173,7 @@ return {
           },
         },
       },
+      terraformls = {},
     }
 
     -- Ensure the servers and tools above are installed

@@ -53,7 +53,9 @@ vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' }
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
 
 -- Code format
-vim.keymap.set('n', '<leader>cf', ':lua vim.lsp.buf.format()<CR>', { desc = '[C]ode [F]ormat' })
+vim.keymap.set('n', '<leader>cf', function()
+  require("conform").format()
+end, { desc = '[C]ode [F]ormat' })
 
 -- Code Action
 vim.keymap.set('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { desc = '[C]ode [A]ction' })
