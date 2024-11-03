@@ -36,6 +36,9 @@ if [ -f '/Users/leonardonatale/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Starship https://starship.rs/
+eval "$(starship init zsh)"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
