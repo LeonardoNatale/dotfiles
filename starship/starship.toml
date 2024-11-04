@@ -1,0 +1,7 @@
+format = """
+😈\
+$directory\
+$git_branch\
+$python
+$character
+"""
