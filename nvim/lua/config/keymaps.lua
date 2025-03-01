@@ -50,7 +50,8 @@ vim.keymap.set('n', '<leader>q', ':BufferClose<CR>', { desc = '[C]lose [B]uffer'
 vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' })
 
 -- Neotree
-vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<C-k>', '<Cmd>Neotree toggle source=filesystem<CR>', { desc = 'Toggle Filesystem Sidebar' })
+vim.keymap.set('n', '<C-s>', '<Cmd>Neotree toggle source=document_symbols<CR>', { desc = 'Toggle Document Symbols' })
 
 -- Code format
 vim.keymap.set('n', '<leader>cf', function()

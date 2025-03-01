@@ -15,5 +15,9 @@ return {
         enabled = true,
       },
     },
+    document_symbols = {
+      window = { position = 'right' },
+    },
+    sources = { 'filesystem', 'document_symbols' }
   },
 }
