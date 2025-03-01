@@ -66,3 +66,7 @@ vim.keymap.set('n', '<leader>gbl', ':Gitsigns blame_line<CR>', { desc = '[G]it [
 
 -- Json
 vim.keymap.set('n', '<leader>jq', ':%!jq -S .<CR>', { desc = '[J]son [S]ort' })
+
+-- Mini Surround and s key
+-- https://github.com/echasnovski/mini.nvim/blob/e24ec1fcf885990fec1a993fe8304a033fd1806d/doc/mini-surround.txt#L570
+vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
