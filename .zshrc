@@ -65,3 +65,10 @@ alias monorepo="cd ~/carbonfact/carbonfact"
 alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
 
+
+# bun completions
+[ -s "/Users/leonardonatale/.bun/_bun" ] && source "/Users/leonardonatale/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
