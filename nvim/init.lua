@@ -22,17 +22,7 @@ require 'config.autocmd'
 -- Install Lazy package manager.
 require('lazy').setup {
   'tpope/vim-sleuth',
-  -- Collection of various small independent plugins/modules.
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for kickstart
-  --
-  --  Here are some example plugins that I've included in the kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  'tpope/vim-sensible', -- sensible default config
   { import = 'core' },
   { import = 'custom' },
 }
-
--- vim: ts=2 sts=2 sw=2 et
