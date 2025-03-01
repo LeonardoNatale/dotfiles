@@ -108,16 +108,8 @@ return {
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
-      -- Is `tsserver` getting slow? See https://github.com/pmizio/typescript-tools.nvim
-      ts_ls = {
-        autostart = true,
-        on_attach = function(client)
-          -- Don't use tsserver for formatting, use eslint or biome instead
-          client.server_capabilities.documentFormattingProvider = false
-        end,
-      },
-      biome = {
-      },
+      vtsls = {},
+      biome = {},
       eslint = {
         autostart = true,
       },
@@ -194,6 +186,8 @@ return {
 
     require('mason-lspconfig').setup {
       handlers = {
+        -- Override ts_ls to do nothing
+        ["ts_ls"] = function() end,
         function(server_name)
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
