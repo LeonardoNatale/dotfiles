@@ -16,6 +16,10 @@ vim.opt.rtp:prepend(lazypath)
 -- TECHNICAL_DEBT:
 -- there is probably a more lazy.nvim way to do this
 
+require 'config.options'
+require 'config.keymaps'
+require 'config.autocmd'
+
 -- Install Lazy package manager.
 require('lazy').setup {
   'tpope/vim-sleuth',
@@ -23,7 +27,3 @@ require('lazy').setup {
   { import = 'core' },
   { import = 'custom' },
 }
-
-require 'config.options'
-require 'config.keymaps'
-require 'config.autocmd'
