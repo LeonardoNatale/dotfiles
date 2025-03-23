@@ -10,7 +10,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git poetry poetry-env zsh-autosuggestions zsh-nvm zsh-vi-mode)
+plugins=(git poetry poetry-env zsh-autosuggestions zsh-vi-mode)
 
 export PATH="/Users/leonardonatale/.local/bin:$PATH"
 
@@ -60,7 +60,6 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 ## Quick navigation
 alias dotfiles="cd ~/dev/dotfiles"
 alias couture="cd ~/carbonfact/couture"
-alias kaya="cd ~/carbonfact/kaya"
 alias monorepo="cd ~/carbonfact/carbonfact"
 alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
@@ -72,3 +71,15 @@ alias janco="cd ~/carbonfact/janco"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# yazi 
+## provides the ability to change the current working directory when exiting Yazi.
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
