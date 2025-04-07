@@ -1,11 +1,10 @@
 return {
   'romgrk/barbar.nvim',
   dependencies = {
-    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    'lewis6991/gitsigns.nvim',       -- OPTIONAL: for git status
+    'nvim-tree/nvim-web-devicons',   -- OPTIONAL: for file icons
   },
-  init = function()
-    vim.g.barbar_auto_setup = false
-  end,
+  init = function() vim.g.barbar_auto_setup = false end,
   opts = {
     disabled_keys = {
       -- arrow keys used to move between windows
@@ -14,6 +13,6 @@ return {
       ['<Left>'] = {},
       ['<Right>'] = {},
     },
-  },
-  version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  }
 }

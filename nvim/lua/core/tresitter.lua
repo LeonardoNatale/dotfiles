@@ -14,6 +14,7 @@ return {
         'javascript',
         'json',
         'lua',
+        'make',
         'markdown',
         'prisma',
         'python',
