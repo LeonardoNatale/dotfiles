@@ -59,7 +59,6 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 ## Quick navigation
 alias dotfiles="cd ~/dev/dotfiles"
-alias couture="cd ~/carbonfact/couture"
 alias monorepo="cd ~/carbonfact/carbonfact"
 alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
