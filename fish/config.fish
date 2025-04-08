@@ -28,8 +28,8 @@ alias monorepo="cd ~/carbonfact/carbonfact"
 alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
 
-# Automatically switch node version based on .nvmrc
-function nvm_use_on_dir_change --on-variable PWD
+# automatically switch node version based on .nvmrc
+function nvm_use_on_dir_change --on-variable pwd
   if status is-interactive
     if test -e ./.nvmrc 
       nvm use --silent
