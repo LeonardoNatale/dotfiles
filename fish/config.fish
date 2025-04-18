@@ -29,9 +29,12 @@ alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
 
 # automatically switch node version based on .nvmrc
-function nvm_use_on_dir_change --on-variable pwd
+function nvm_use_on_dir_change --on-variable PWD
+  echo "Checking for nvm"
   if status is-interactive
+    echo "Checking for .nvmrc file"
     if test -e ./.nvmrc 
+      echo "Found .nvmrc file"
       nvm use --silent
     end
   end
@@ -47,4 +50,4 @@ function sudo
 end
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/leonardonatale/google-cloud-sdk/path.fish.inc' ]; . '/Users/leonardonatale/google-cloud-sdk/path.fish.inc'; end
+if [ -f '$HOME/google-cloud-sdk/path.fish.inc' ]; . '$HOME/google-cloud-sdk/path.fish.inc'; end

@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git poetry poetry-env zsh-autosuggestions zsh-vi-mode)
 
-export PATH="/Users/leonardonatale/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -32,9 +32,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Google Cloud SDK
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/leonardonatale/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leonardonatale/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leonardonatale/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Starship https://starship.rs/
 eval "$(starship init zsh)"
@@ -65,7 +65,7 @@ alias janco="cd ~/carbonfact/janco"
 
 
 # bun completions
-[ -s "/Users/leonardonatale/.bun/_bun" ] && source "/Users/leonardonatale/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
