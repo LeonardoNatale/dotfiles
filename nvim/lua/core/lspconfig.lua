@@ -110,6 +110,7 @@ return {
       },
       prismals = {},
       tailwindcss = {},
+      fish_lsp = {},
       cssls = {},
       ruff = {
         on_attach = function(client, bufnr)
