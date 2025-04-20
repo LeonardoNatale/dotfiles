@@ -29,15 +29,14 @@ alias vera="cd ~/carbonfact/vera"
 alias janco="cd ~/carbonfact/janco"
 
 # automatically switch node version based on .nvmrc
+
+set -U nvm_default_version v22.14.0
+
 function nvm_use_on_dir_change --on-variable PWD
-  echo "Checking for nvm"
-  if status is-interactive
-    echo "Checking for .nvmrc file"
     if test -e ./.nvmrc 
-      echo "Found .nvmrc file"
       nvm use --silent
+      echo "Using $nvm_current_version from .nvmrc"
     end
-  end
 end
 
 #  Repeat previous command with administrator rights
@@ -49,5 +48,15 @@ function sudo
     end
 end
 
+# Provides the ability to change the current working directory when exiting Yazi
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+	    builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.fish.inc' ]; . '$HOME/google-cloud-sdk/path.fish.inc'; end
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
