@@ -14,13 +14,11 @@ return {
       typescript = { "biome", "biome-check", "biome-organize-imports", "eslint_d" },
       typescriptreact = { "biome", "biome-check", "biome-organize-imports", "eslint_d" },
       json = { "biome", "biome-check" },
-      sql = { 'sql_formatter' },
+      sql = { "sqruff" },
+      ["sql.jinja"] = { "sqruff" },
       terraform = { 'terraform_fmt' },
     },
     format_on_save = { timeout_ms = 500 },
-    formatters = {
-      -- additional options here
-    },
   },
   init = function()
     -- Allows using native neovim formatting utils like gq
