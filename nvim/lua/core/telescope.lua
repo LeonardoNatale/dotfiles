@@ -2,7 +2,6 @@
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
-  branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
     -- Requires Nerd ont.
@@ -50,7 +49,9 @@ return {
         --   },
       },
       file_ignore_patterns = {
-        "*.git*"
+        "%.git",
+        "%.pyc",
+        "%.cpython%-%d+%.pyc$",
       },
       pickers = {
         find_files = {
@@ -71,6 +72,11 @@ return {
             '!**/dist/*',
           },
         },
+      },
+      live_grep = {
+        additional_args = function()
+          return { '--fixed-strings' }
+        end,
       },
       extensions = {
         ['ui-select'] = {

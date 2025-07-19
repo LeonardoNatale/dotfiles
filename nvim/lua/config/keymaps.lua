@@ -1,3 +1,6 @@
+-- Definition
+-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition' })
+
 -- Clear highlight on search on pressing <Esc>
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -51,7 +54,7 @@ vim.keymap.set('n', '<leader>F', ':BufferPick<CR>', { desc = '[P]ick [B]uffer' }
 
 -- Code format
 vim.keymap.set('n', '<leader>cf', function()
-  require("conform").format()
+  require('conform').format()
 end, { desc = '[C]ode [F]ormat' })
 
 -- Code Action
