@@ -16,7 +16,7 @@ return {
       html = {},
       jsonls = {},
       tailwindcss = {},
-      ts_ls = {},
+      vtsls = {},
       prismals = {},
       vimls = {},
       terraformls = {},
@@ -29,8 +29,8 @@ return {
                 enabled = true,
               },
               jedi_completion = { fuzzy = true },
-            }
-          }
+            },
+          },
         },
       },
       lua_ls = {
@@ -38,19 +38,18 @@ return {
           Lua = {
             diagnostics = {
               -- recognize the `vim` global
-              globals = { 'vim' }
+              globals = { 'vim' },
             },
             workspace = {
               -- recognize vim api
-              library = vim.api.nvim_get_runtime_file("", true)
-            }
+              library = vim.api.nvim_get_runtime_file('', true),
+            },
           },
-        }
+        },
       },
-      jinja_lsp = {}
+      jinja_lsp = {},
     },
-    on_attach = function()
-    end,
+    on_attach = function() end,
   },
   config = function(_, opts)
     require('lsp-setup').setup(opts)
@@ -99,7 +98,7 @@ return {
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-      end
+      end,
     })
-  end
+  end,
 }
