@@ -44,34 +44,6 @@ return {
       --
       defaults = {
         path_display = { 'smart' },
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-      },
-      file_ignore_patterns = {
-        "%.git",
-        "%.pyc",
-        "%.cpython%-%d+%.pyc$",
-      },
-      pickers = {
-        find_files = {
-          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-          find_command = {
-            'rg',
-            '--files',
-            '--ignore',
-            '--hidden',
-            '-u',
-            '--glob',
-            '!**/.git/*',
-            '--glob',
-            '!**/node_modules/*',
-            '--glob',
-            '!**/.next/*',
-            '--glob',
-            '!**/dist/*',
-          },
-        },
       },
       live_grep = {
         additional_args = function()
