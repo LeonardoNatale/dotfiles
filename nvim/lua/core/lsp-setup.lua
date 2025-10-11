@@ -10,6 +10,7 @@ return {
     -- default_mappings = false,
     servers = {
       bashls = {},
+      copilot = {},
       cssls = {},
       biome = {},
       eslint = {},
