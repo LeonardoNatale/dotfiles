@@ -20,6 +20,7 @@ return {
         end,
         'fallback',
       },
+      ['<CR>'] = { 'accept', 'fallback' },
     },
   },
 }
