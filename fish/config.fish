@@ -49,3 +49,6 @@ end
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
 
 source ~/.safe-chain/scripts/init-fish.fish # Safe-chain Fish initialization script
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
