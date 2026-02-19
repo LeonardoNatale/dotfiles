@@ -17,7 +17,29 @@ return {
       html = {},
       jsonls = {},
       tailwindcss = {},
-      vtsls = {},
+      vtsls = {
+        settings = {
+          typescript = {
+            tsserver = {
+              maxTsServerMemory = 4096,
+              experimental = {
+                enableProjectDiagnostics = false,
+              },
+            },
+            preferences = {
+              includePackageJsonAutoImports = 'off',
+            },
+          },
+          javascript = {
+            tsserver = {
+              maxTsServerMemory = 4096,
+            },
+          },
+          vtsls = {
+            autoUseWorkspaceTsdk = true,
+          },
+        },
+      },
       prismals = {},
       vimls = {},
       terraformls = {},
