@@ -6,6 +6,9 @@ return {
       mux = {
         enabled = false,
       },
+      tools = {
+        pi = { cmd = { 'pi' } },
+      },
     },
   },
   keys = {
@@ -89,6 +92,13 @@ return {
         require('sidekick.cli').toggle { name = 'claude', focus = true }
       end,
       desc = 'Sidekick Toggle Claude',
+    },
+    {
+      '<leader>ai',
+      function()
+        require('sidekick.cli').toggle { name = 'pi', focus = true }
+      end,
+      desc = 'Sidekick Toggle Pi',
     },
   },
 }
