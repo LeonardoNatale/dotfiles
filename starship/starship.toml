@@ -1,7 +1,14 @@
+command_timeout = 1000
+
 format = """
 😈\
 $directory\
 $git_branch\
-$python
+$git_status\
+$python\
+$nodejs\
+$gcloud\
+$cmd_duration
 $character
 """
+

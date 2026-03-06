@@ -11,15 +11,21 @@ pyenv init - fish | source
 fish_vi_key_bindings
 # Enable Starship prompt
 starship init fish | source
-# Aliases
-alias fishconfig="nvim ~/.config/fish/config.fish"
-alias lg='lazygit'
+# Abbreviations
+abbr -a ls "eza --icons"
+abbr -a ll "eza -l --icons --git"
+abbr -a la "eza -la --icons --git"
+abbr -a lt "eza -T --icons"
+abbr -a l "eza -l --icons"
+abbr -a fishconfig "nvim ~/.config/fish/config.fish"
+abbr -a lg lazygit
+# Keep as alias — complex argument substitution
 alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 ## Quick navigation
-alias dotfiles="cd ~/dev/dotfiles"
-alias monorepo="cd ~/carbonfact/carbonfact"
-alias vera="cd ~/carbonfact/vera"
-alias janco="cd ~/carbonfact/janco"
+abbr -a dotfiles "cd ~/dev/dotfiles"
+abbr -a monorepo "cd ~/carbonfact/carbonfact"
+abbr -a vera "cd ~/carbonfact/vera"
+abbr -a janco "cd ~/carbonfact/janco"
 # automatically switch node version based on .nvmrc
 set -U nvm_default_version v22.14.0
 function nvm_use_on_dir_change --on-variable PWD
