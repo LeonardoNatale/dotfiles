@@ -24,7 +24,7 @@ alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
 ## Quick navigation
 abbr -a dotfiles "cd ~/dev/dotfiles"
 abbr -a monorepo "cd ~/carbonfact/carbonfact"
-abbr -a vera "cd ~/carbonfact/vera"
+abbr -a vera "cd ~/carbonfact/carbonfact/vera"
 abbr -a janco "cd ~/carbonfact/janco"
 # automatically switch node version based on .nvmrc
 set -U nvm_default_version v22.14.0
@@ -53,10 +53,10 @@ function y
 end
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
-
-source ~/.safe-chain/scripts/init-fish.fish # Safe-chain Fish initialization script
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 # zoxide
 zoxide init fish | source
+
+source ~/.safe-chain/scripts/init-fish.fish # Safe-chain Fish initialization script

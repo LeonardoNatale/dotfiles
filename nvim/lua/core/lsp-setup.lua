@@ -43,18 +43,28 @@ return {
       prismals = {},
       vimls = {},
       terraformls = {},
-      pylsp = {
-        autostart = true,
+      pyright = {
         settings = {
-          pylsp = {
-            plugins = {
-              ruff = {
-                enabled = true,
-              },
-              jedi_completion = { fuzzy = true },
+          pyright = {
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              ignore = { '*' },
+              typeCheckingMode = 'basic',
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = 'openFilesOnly',
             },
           },
         },
+      },
+      ruff = {
+        on_attach = function(client, _)
+          -- Let pyright own hover; ruff returns empty and triggers
+          -- "No information available" notifications otherwise.
+          client.server_capabilities.hoverProvider = false
+        end,
       },
       lua_ls = {
         settings = {
