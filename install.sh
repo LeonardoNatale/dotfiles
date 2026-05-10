@@ -7,4 +7,5 @@ ln -s ~/dev/dotfiles/fish/functions ~/.config/fish/functions
 ln -s ~/dev/dotfiles/fish/fish_variables ~/.config/fish/fish_variables
 ln -s ~/dev/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -s ~/dev/dotfiles/ghostty ~/.config/ghostty
+ln -s ~/dev/dotfiles/rtk/config.toml "$HOME/Library/Application Support/rtk/config.toml"
 
