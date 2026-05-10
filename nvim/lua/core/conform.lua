@@ -18,7 +18,7 @@ return {
       ['sql.jinja'] = { 'sqruff' },
       terraform = { 'terraform_fmt' },
     },
-    format_on_save = { timeout_ms = 500 },
+    format_on_save = { timeout_ms = 3000 },
   },
   init = function()
     -- Allows using native neovim formatting utils like gq
